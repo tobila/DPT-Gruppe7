@@ -71,6 +71,12 @@ feature --find
 		end
 
 feature
+	has(localValue: INTEGER): BOOLEAN
+		do
+
+		end
+
+feature
 
 	getroot: NODE
 		do
