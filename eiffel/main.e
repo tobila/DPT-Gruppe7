@@ -26,10 +26,12 @@ feature {NONE}
 			b.insert (32)
 			b.insert (7)
 			b.insert (1)
-		--	b.insert (10)
-			print (b.find (10))
-			print ("OK!")
-		end
+			b.insert (10)
+
+			print (b.has (55))
+
+		print ("OK!")
+	end
 
 end -- class MAIN
 

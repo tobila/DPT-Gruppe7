@@ -6,6 +6,8 @@ note
 
 class
 	BINARYTREE
+	inherit CONTAINER[INTEGER]
+		redefine is_empty, linear_representation end
 
 create
 	make
@@ -50,18 +52,18 @@ feature --insert
 
 feature --find
 
-	find (localvalue: INTEGER_32): BOOLEAN
+	find (localvalue: INTEGER_32): detachable NODE
 		local
 			localnode: detachable NODE
 		do
-			Result := False
+			Result:=Void
 			from
 				localnode := root
 			until
-				localnode = Void or Result = True
+				localnode = Void or Result /= Void
 			loop
 				if (localvalue = localnode.getvalue) then
-					Result := True
+					Result := localNode
 				elseif (localvalue < localnode.getvalue) then
 					localnode := localnode.getleftnode
 				elseif (localvalue > localnode.getvalue) then
@@ -70,21 +72,33 @@ feature --find
 			end
 		end
 
-feature
+feature --has
 	has(localValue: INTEGER): BOOLEAN
 		do
-
+			Result:= current.find (localValue)/=Void
 		end
 
-feature
+feature --getRoot
 
 	getroot: NODE
 		do
 			Result := root
 		end
 
-feature
+feature --redefine
+	is_empty: BOOLEAN
+		do
+			Result:= false	--always Root-Node
+		end
 
+--	linear_representation: LINEAR [INTEGER]
+--			do
+--				Result:= linear_representation
+--			end
+
+
+
+feature
 	root: NODE
 
 end -- class BINARYTREE
