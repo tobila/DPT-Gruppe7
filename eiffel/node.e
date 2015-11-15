@@ -19,6 +19,7 @@ feature --methods for value
 			Result := value
 		end
 
+
 feature --methods for parent node
 
 	getparent: detachable NODE
@@ -46,6 +47,11 @@ feature --methods for left node
 			left := newnode
 		end
 
+	setNewLeftNode(newNode: detachable NODE)
+		do
+			left:=newNode
+		end
+
 feature --methods for right node
 
 	getrightnode: detachable NODE
@@ -59,6 +65,11 @@ feature --methods for right node
 		do
 			create newnode.make (localvalue, Current)
 			right := newnode
+		end
+
+	setNewRightNode(newNode: detachable NODE)
+		do
+			right:=newNode
 		end
 
 feature --attributes

@@ -17,20 +17,45 @@ feature {NONE}
 	make
 		local
 			b: BINARYTREE
+
 		do
-			create b.make (12)
-			b.insert (8)
-			b.insert (9)
-			b.insert (55)
-			b.insert (47)
-			b.insert (32)
-			b.insert (7)
-			b.insert (1)
+
+			create b.make (50)
+			b.insert (30)
+			b.insert (20)
 			b.insert (10)
+			b.insert (13)
+			b.insert (25)
+			b.insert (23)--left tree
 
-			print (b.has (55))
+			b.insert (35)
+			b.insert (34)
+			b.insert (31)
+			b.insert (33)
+			b.insert (40)
+			b.insert (41)
+			b.insert (42)
 
-		print ("OK!")
+			if attached b.getroot.getleftnode as x then
+				print(x.value)
+			end
+
+			print("Ist vorhanden: ")
+
+			print(b.has (35))
+			print("%N")
+
+
+			print("Wurde geloescht: ")
+			print(b.remove (35))
+			print("%N")
+			print("Ist vorhanden: ")
+			print(b.has (35))
+			if attached b.getroot.getleftnode as x then
+				print(x.value)
+			end
+
+
 	end
 
 end -- class MAIN
