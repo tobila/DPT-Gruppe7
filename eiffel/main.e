@@ -21,39 +21,48 @@ feature {NONE}
 		do
 
 			create b.make (50)
-			b.insert (30)
-			b.insert (20)
-			b.insert (10)
-			b.insert (13)
-			b.insert (25)
-			b.insert (23)--left tree
-
-			b.insert (35)
-			b.insert (34)
-			b.insert (31)
-			b.insert (33)
 			b.insert (40)
-			b.insert (41)
-			b.insert (42)
+			b.insert (30)
+			b.insert (60)
+		print(	b.remove (50))
 
-			if attached b.getroot.getleftnode as x then
-				print(x.value)
+			if attached b.getroot as x then
+				if attached x.getrightnode as x2 then
+					print(x2.getvalue)
+				end
 			end
+--			b.insert (60)
+--			b.insert (55)
+--			b.insert (53)
+--			b.insert (54)
 
-			print("Ist vorhanden: ")
+--			if attached b.getroot as x then
+--				if attached x.getrightnode as x2 then
+--					print(x2.value)
+--				end
 
-			print(b.has (35))
-			print("%N")
+--			end
+
+--			print("Ist vorhanden: ")
+
+--			print(b.has (50))
+--			print("%N")
 
 
-			print("Wurde geloescht: ")
-			print(b.remove (35))
-			print("%N")
-			print("Ist vorhanden: ")
-			print(b.has (35))
-			if attached b.getroot.getleftnode as x then
-				print(x.value)
-			end
+--			print("Wurde geloescht: ")
+--			print(b.remove (50))
+--			print("%N")
+--			print("Ist vorhanden: ")
+--			print(b.has (50))
+--			if attached b.getroot as x then
+--				if attached x.getrightnode as x2 then
+--					if attached x2.getleftnode as x3 then
+--						if attached x3.getleftnode as x4 then
+--							print(x4.value)
+--						end
+--					end
+--				end
+--			end
 
 
 	end
